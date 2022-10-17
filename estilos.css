@@ -157,12 +157,115 @@ nav {
   width: 200px;
 }
 
-.contacto__section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin-bottom: 20px;
+.imagenes__div__tamFotos__a:hover {
+  scale: 110%;
 }
+
+.contacto__main__section {
+  display: grid;
+  grid-template-areas:
+  "texto1 mapa1 formulario"
+  "texto2 mapa2 formulario";
+  grid-template-rows: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 2fr;
+  color: #1D3557;
+  font-size: 25px;
+  line-height: 25px;
+  height: 80vh;
+  margin: 0vw 2vw 0vw 2vw;
+}
+
+/* @media only screen and (min-width: 768px) {
+  .index__main__section {
+    display: grid;
+    grid-template-areas:
+      "logo texto1"
+      "logo texto2"
+      "logo texto3";
+    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 80vh;
+    margin: 0vw 5vw 0vw 5vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sabores__section {
+    display: grid;
+    grid-template-rows: auto auto auto; 
+    grid-template-columns: auto auto;
+    color: #1D3557;
+    font-size: 25px;
+    line-height: 25px;
+    height: 80vh;
+    margin: 0vw 2vw 0vw 2vw;
+  }
+} */
+
+.contacto__main__section__texto1 {
+  grid-area: texto1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: initial;
+  font-size: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.contacto__main__section__texto2 {
+  grid-area: texto2;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.contacto__main__section__mapa1 {
+  grid-area: mapa1;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 45%;
+  padding-left: 2%;
+}
+
+.contacto__main__section__mapa2 {
+  grid-area: mapa2;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 45%;
+  padding-left: 2%;
+}
+
+.contacto__main__section__fieldset {
+  grid-area: formulario;
+  margin-top: 15px;
+  justify-content: center;
+}
+/* .contacto__section__div2__ul {
+  display: flex;
+  flex-flow: row wrap;
+  width: 45%;
+  font-size: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+} */
+/* 
+@media only screen and (min-width: 1024px) {
+  .sabores__section {
+    display: grid;
+    grid-template-rows: auto; 
+    grid-template-columns: auto auto auto auto auto;
+    color: #1D3557;
+    font-size: 25px;
+    line-height: 25px;
+    height: 80vh;
+    margin: 0vw 2vw 0vw 2vw;
+  }
+}
+
 
 .contacto__section__div {
   display: flex;
@@ -175,18 +278,18 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
-}
+} */
 
 .contacto__section__div2__ul {
   display: flex;
   flex-flow: row wrap;
-  width: 45%;
+  /* width: 45%; */
   font-size: 15px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  /* padding-top: 25px;
+  padding-bottom: 25px; */
 }
 
-.contacto__section__div2__a {
+/* .contacto__section__div2__a {
   display: flex;
   flex-flow: row nowrap;
   width: 45%;
@@ -203,6 +306,13 @@ nav {
 .contacto__fieldset__div {
   margin-top: 15px;
   justify-content: center;
+} */
+
+.contacto__mapas {
+  border-radius: 30px;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
 }
 
 .contacto__fieldset__div__selectorPais {
@@ -250,14 +360,40 @@ footer {
 }
 
 .sabores__section {
-  padding: 10px;
-  margin-bottom: 50px;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto; 
+  grid-template-columns: auto;
   color: #1D3557;
   font-size: 25px;
   line-height: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  height: 80vh;
+  margin: 0vw 2vw 0vw 2vw;
+}
+
+@media only screen and (min-width: 768px) {
+  .sabores__section {
+    display: grid;
+    grid-template-rows: auto auto auto; 
+    grid-template-columns: auto auto;
+    color: #1D3557;
+    font-size: 25px;
+    line-height: 25px;
+    height: 80vh;
+    margin: 0vw 2vw 0vw 2vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .sabores__section {
+    display: grid;
+    grid-template-rows: auto; 
+    grid-template-columns: auto auto auto auto auto;
+    color: #1D3557;
+    font-size: 25px;
+    line-height: 25px;
+    height: 80vh;
+    margin: 0vw 2vw 0vw 2vw;
+  }
 }
 
 .sabores__section__div {
