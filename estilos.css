@@ -8,10 +8,53 @@
 body {
   display: flex;
   flex-direction: column;
-  /* min-height: 100vh; */
-  /* width: 80vw;
-  margin-left: 10vw; */
   justify-content: center;
+  /* position: relative;
+  padding-bottom: 20vh; */
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #1D3557;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  height: 6vh;
+}
+
+.nav__a {
+  color: #F1FAEE;
+  background-color: #1D3557;
+  padding: 0.6% 1% 0% 1%;
+  font-size: 100%;
+}
+
+.nav__a:hover {
+  border: #F1FAEE;
+  border: solid;
+}
+
+.active {
+  background-color: #E63946;
+}
+
+footer {
+  margin-top: auto;
+  /* position: absolute;
+  bottom: 0;
+  width: 100vw; */
+}
+
+.footer__div {
+  background-color: #1D3557;
+  padding: 5px;
+  color: #F1FAEE;
+  font-size: 15px;
+  text-align: center;
 }
 
 .centerTotal {
@@ -33,7 +76,7 @@ body {
     "texto1"
     "texto2"
     "texto3";
-  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr;
   grid-gap: 10px;
   height: 80vh;
@@ -47,7 +90,7 @@ body {
       "logo texto1"
       "logo texto2"
       "logo texto3";
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 50% 50%;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
@@ -116,34 +159,6 @@ fieldset {
   width: 90%;
 }
 
-nav {
-  background-color: #1D3557;
-  position: fixed;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  height: 6vh;
-}
-
-.nav__a {
-  color: #F1FAEE;
-  background-color: #1D3557;
-  padding: 0.6% 1% 0% 1%;
-  font-size: 100%;
-}
-
-.nav__a:hover {
-  border: #F1FAEE;
-  border: solid;
-}
-
-.active {
-  background-color: #E63946;
-}
-
 .imagenes__div__tamFotos {
   display: flex;
   flex-direction: row;
@@ -164,10 +179,13 @@ nav {
 .contacto__main__section {
   display: grid;
   grid-template-areas:
-  "texto1 mapa1 formulario"
-  "texto2 mapa2 formulario";
-  grid-template-rows: 1fr 1fr; 
-  grid-template-columns: 1fr 1fr 2fr;
+  "texto1"
+  "mapa1"
+  "texto2"
+  "mapa2"
+  "formulario";
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: auto;
   color: #1D3557;
   font-size: 25px;
   line-height: 25px;
@@ -175,26 +193,14 @@ nav {
   margin: 0vw 2vw 0vw 2vw;
 }
 
-/* @media only screen and (min-width: 768px) {
-  .index__main__section {
+@media only screen and (min-width: 768px) {
+  .contacto__main__section {
     display: grid;
     grid-template-areas:
-      "logo texto1"
-      "logo texto2"
-      "logo texto3";
-    grid-template-rows: 1fr 1fr 1fr; 
-    grid-template-columns: 50% 50%;
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
-    height: 80vh;
-    margin: 0vw 5vw 0vw 5vw;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .sabores__section {
-    display: grid;
-    grid-template-rows: auto auto auto; 
+    "texto1 mapa1"
+    "texto2 mapa2"
+    "formulario formulario";
+    grid-template-rows: auto auto auto;
     grid-template-columns: auto auto;
     color: #1D3557;
     font-size: 25px;
@@ -202,7 +208,23 @@ nav {
     height: 80vh;
     margin: 0vw 2vw 0vw 2vw;
   }
-} */
+}
+
+@media only screen and (min-width: 1024px) {
+  .contacto__main__section {
+    display: grid;
+    grid-template-areas:
+    "texto1 mapa1 formulario"
+    "texto2 mapa2 formulario";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr;
+    color: #1D3557;
+    font-size: 25px;
+    line-height: 25px;
+    height: 80vh;
+    margin: 0vw 2vw 0vw 2vw;
+  }
+}
 
 .contacto__main__section__texto1 {
   grid-area: texto1;
@@ -227,16 +249,14 @@ nav {
   grid-area: mapa1;
   display: flex;
   flex-flow: row nowrap;
-  width: 45%;
-  padding-left: 2%;
+  padding: 2%;
 }
 
 .contacto__main__section__mapa2 {
   grid-area: mapa2;
   display: flex;
   flex-flow: row nowrap;
-  width: 45%;
-  padding-left: 2%;
+  padding: 2%;
 }
 
 .contacto__main__section__fieldset {
@@ -244,74 +264,17 @@ nav {
   margin-top: 15px;
   justify-content: center;
 }
-/* .contacto__section__div2__ul {
-  display: flex;
-  flex-flow: row wrap;
-  width: 45%;
-  font-size: 15px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-} */
-/* 
-@media only screen and (min-width: 1024px) {
-  .sabores__section {
-    display: grid;
-    grid-template-rows: auto; 
-    grid-template-columns: auto auto auto auto auto;
-    color: #1D3557;
-    font-size: 25px;
-    line-height: 25px;
-    height: 80vh;
-    margin: 0vw 2vw 0vw 2vw;
-  }
-}
-
-
-.contacto__section__div {
-  display: flex;
-  flex-flow: row wrap;
-  width: 50%;
-  padding-left: 2%;
-}
-
-.contacto__section__div2 {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 100%;
-} */
 
 .contacto__section__div2__ul {
   display: flex;
   flex-flow: row wrap;
-  /* width: 45%; */
   font-size: 15px;
-  /* padding-top: 25px;
-  padding-bottom: 25px; */
-}
-
-/* .contacto__section__div2__a {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 45%;
-  padding-left: 2%;
 }
 
 .contacto__mapas {
   border-radius: 30px;
   padding: 15px;
-  width: 100%;
-  text-align: center;
-}
-
-.contacto__fieldset__div {
-  margin-top: 15px;
-  justify-content: center;
-} */
-
-.contacto__mapas {
-  border-radius: 30px;
-  padding: 15px;
-  width: 100%;
+  width: 90%;
   text-align: center;
 }
 
@@ -343,25 +306,9 @@ h1 {
   margin-bottom: 20px;
 }
 
-footer {
-  text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-end; */
-  position: relative;
-}
-
-.footer__div {
-  background-color: #1D3557;
-  padding: 10px;
-  color: #F1FAEE;
-  font-size: 20px;
-  line-height: 10px;
-}
-
 .sabores__section {
   display: grid;
-  grid-template-rows: auto auto auto auto auto; 
+  grid-template-rows: auto auto auto auto auto;
   grid-template-columns: auto;
   color: #1D3557;
   font-size: 25px;
@@ -373,7 +320,7 @@ footer {
 @media only screen and (min-width: 768px) {
   .sabores__section {
     display: grid;
-    grid-template-rows: auto auto auto; 
+    grid-template-rows: auto auto auto;
     grid-template-columns: auto auto;
     color: #1D3557;
     font-size: 25px;
@@ -386,7 +333,7 @@ footer {
 @media only screen and (min-width: 1024px) {
   .sabores__section {
     display: grid;
-    grid-template-rows: auto; 
+    grid-template-rows: auto;
     grid-template-columns: auto auto auto auto auto;
     color: #1D3557;
     font-size: 25px;
@@ -407,7 +354,7 @@ footer {
   padding-bottom: 10px;
   font-size: 25px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: space-around;
   text-decoration: underline;
 }
@@ -416,7 +363,7 @@ ul li {
   padding-left: 20px;
   font-size: 20px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   flex-wrap: wrap;
   list-style-type: circle;
 }
@@ -459,7 +406,7 @@ ul li {
       "fotoV fotoH1"
       "fotoV fotoH2"
       "fotoH3 fotoH3";
-    grid-template-rows: 2fr 1fr 1fr 1fr; 
+    grid-template-rows: 2fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     height: 80vh;
@@ -473,7 +420,7 @@ ul li {
     grid-template-areas:
       "texto fotoV fotoH1 fotoH2"
       "texto fotoV fotoH3 fotoH3";
-    grid-template-rows: 2fr 2fr; 
+    grid-template-rows: 2fr 2fr;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-gap: 10px;
     height: 80vh;
